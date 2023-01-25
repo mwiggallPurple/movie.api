@@ -1,15 +1,15 @@
 //const APIlink = 'https://imdb-api.com/en/API/Top250Movies/k_o27z07js';
 
+let reData;
 
 getData = () => {
 fetch (APIlink)
 .then ((res) =>res.json())
 .then((data) => {
-const reData = refactorData(data.items);
+  reData = refactorData(data.items);
 movieCard(reData);
 });
 };
-
 
 
 refactorData = (movies) => {
@@ -31,7 +31,6 @@ return movieData;
 };
 
 
-
 movieCard = (reFacMovies) => {
     let moviesCards = ''
 reFacMovies.map((m)=>{
@@ -42,8 +41,10 @@ moviesCards +=  `<div class="movieCard">
   <p>${m.year}</p>
   <p>IMDB Rating: <span>${m.imDbRating}</span></p>
   <div class="movieCardSocial">
-    <a href="#"><i class="fas fa-heart"></i></a>
-    <a href="#"><i class="fas fa-share-alt"></i></a>
+    <a href="#" onClick="addLike('${m.id}')"><i class="fas fa-heart ${
+        m.likes ? 'likeIcon' : '' 
+    }"></i></a>
+    <a href="https://www.imdb.com/title/${m.id}/" target="_blank"><i class="fa-solid fa-share-nodes"></i></a>
     <a href="#"><i class="fas fa-comment"></i></a>
   </div>
 </div>
@@ -52,4 +53,20 @@ moviesCards +=  `<div class="movieCard">
 
 document.querySelector('body').innerHTML = moviesCards
 };
-getData();
+
+addLike = (movieId) => {
+    reData.map((m) => {
+        if (m.id === movieId) {
+            m.likes++;
+        }
+        return m;
+    });
+    reData.sort((a ,b) => parseFloat(b.likes) - parseFloat(a.likes));
+
+    movieCard(reData);
+};
+
+
+getData(); 
+
+ 
