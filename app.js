@@ -1,4 +1,4 @@
-//const APIlink = 'https://imdb-api.com/en/API/Top250Movies/k_o27z07js';
+const APIlink = 'https://imdb-api.com/en/API/Top250Movies/k_o27z07js';
 
 let reData;
 
@@ -45,7 +45,7 @@ moviesCards +=  `<div class="movieCard">
         m.likes ? 'likeIcon' : '' 
     }"></i></a>
     <a href="https://www.imdb.com/title/${m.id}/" target="_blank"><i class="fa-solid fa-share-nodes"></i></a>
-    <a href="#"><i class="fas fa-comment"></i></a>
+  <a href="#"><i class="fas fa-comment"></i></a>
   </div>
 </div>
 </div>`;
@@ -67,6 +67,12 @@ addLike = (movieId) => {
 };
 
 
+addComment = () => {
+
+
+
+
+}
 getData(); 
 
  
