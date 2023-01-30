@@ -7,7 +7,6 @@
   body {
     min-height: 100vh;
     max-width: 1300px;
-    background-image: linear-gradient(to right, #090979, #00d4ff);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -27,7 +26,7 @@
   
   .movieCard:hover {
     transform: scale(1.02);
-    box-shadow: 5px 10px 18px blue;
+    box-shadow: 5px 10px 18px black;
   }
   
   img {
@@ -49,7 +48,7 @@
     font-size: 1.5rem;
     margin-top: 15px;
     margin-right: 20px;
-    color: lightgray;
+    color: black;
     border: 1px solid lightgray;
     border-radius: 50%;
     padding: 10px;

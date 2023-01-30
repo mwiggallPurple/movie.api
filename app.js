@@ -1,4 +1,4 @@
-const APIlink = 'https://imdb-api.com/en/API/Top250Movies/k_o27z07js';
+//const APIlink = 'https://imdb-api.com/en/API/Top250Movies/k_o27z07js';
 
 let reData;
 
@@ -33,6 +33,7 @@ return movieData;
 
 movieCard = (reFacMovies) => {
     let moviesCards = ''
+    
 reFacMovies.map((m)=>{
 moviesCards +=  `<div class="movieCard">
 <img src="${m.image}" alt="${m.title}" />
